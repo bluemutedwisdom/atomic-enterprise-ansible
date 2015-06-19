@@ -5,5 +5,5 @@
     - ansible_version | version_compare('1.8.0', 'ge')
     - ansible_version | version_compare('1.9.0', 'ne')
 
-- name: Gather OpenShift facts
+- name: Gather Atomic Enterprise facts
   openshift_facts:
