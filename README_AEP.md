@@ -11,7 +11,7 @@
 
 ## Requirements
 * ansible
-  * Tested using ansible-1.8.4-1.fc20.noarch, but should work with version 1.8+
+  * Tested using ansible 1.9.1 and 1.9.2
   * There is currently a known issue with ansible-1.9.0, you can downgrade to 1.8.4 on Fedora by installing one of the builds from Koji: http://koji.fedoraproject.org/koji/packageinfo?packageID=13842
   * Available in Fedora channels
   * Available for EL with EPEL and Optional channel
@@ -108,7 +108,7 @@ The hostnames above should resolve both from the hosts themselves and
 the host where ansible is running (if different).
 
 ## Running the ansible playbooks
-From the openshift-ansible checkout run:
+From the atomic-enterprise-ansible checkout run:
 ```sh
 ansible-playbook playbooks/byo/config.yml
 ```
@@ -119,7 +119,7 @@ inventory file use the -i option for ansible-playbook.
 #### Create the default router
 On the master host:
 ```sh
-openshift ex router --create=true \
+oadm router --create=true \
   --credentials=/etc/openshift/master/openshift-router.kubeconfig \
   --images='docker-buildvm-rhose.usersys.redhat.com:5000/openshift3/ose-${component}:${version}'
 ```
@@ -127,7 +127,7 @@ openshift ex router --create=true \
 #### Create the default docker-registry
 On the master host:
 ```sh
-openshift ex registry --create=true \
+oadm registry --create=true \
   --credentials=/etc/openshift/master/openshift-registry.kubeconfig \
   --images='docker-buildvm-rhose.usersys.redhat.com:5000/openshift3/ose-${component}:${version}' \
   --mount-host=/var/lib/openshift/docker-registry
