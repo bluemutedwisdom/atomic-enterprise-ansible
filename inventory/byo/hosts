@@ -31,9 +31,10 @@ openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 
 
 # host group for masters
 [masters]
-ose3-master-ansible.test.example.com
+ae-master.example.com
 
 # host group for nodes
 [nodes]
-#ose3-master-ansible.test.example.com openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
-ose3-node[1:2]-ansible.test.example.com openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
+ae-master.example.com openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
+#ae-node1.example.com openshift_node_labels="{'region': 'primary', 'zone': 'east'}"
+#ae-node2.example.com openshift_node_labels="{'region': 'primary', 'zone': 'west'}"
