@@ -1,3 +1,0 @@
----
-- name: restart atomic-enterprise-master
-  service: name=atomic-enterprise-master state=restarted
